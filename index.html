@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Evolution of Medicine - Home</title>
+    <!-- Importing Montserrat Font -->
+    <link rel="preconnect" href="https://googleapis.com">
+    <link rel="preconnect" href="https://gstatic.com" crossorigin>
+    <link href="https://googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        /* Base Reset & Theme Variables */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        :root {
+            --bg-color: #E6EEF8;       /* Soft light blue background */
+            --card-bg: #ffffff;        /* Pure white card surface */
+            --primary-color: #1A1A5E;  /* Elegant deep navy */
+            --text-dark: #2D3142;      /* Off-black body copy */
+            --accent-blue: #4E4EBA;    /* Interface signature blue */
+            --line-color: #E2E8F0;     /* Slate gray clean divider lines */
+        }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-dark);
+            line-height: 1.7;
+            padding: 60px 20px;
+        }
+
+        /* Minimal Centered Card Layout */
+        .container {
+            max-width: 760px;
+            margin: 0 auto;
+            background: var(--card-bg);
+            padding: 50px 60px;
+            border-radius: 12px;
+        }
+
+        /* Clean Dropdown Navigation Menu */
+        nav {
+            margin-bottom: 40px;
+        }
+        nav details {
+            display: inline-block;
+            position: relative;
+        }
+        nav summary {
+            list-style: none;
+            cursor: pointer;
+            font-weight: 600;
+            font-size: 0.95rem;
+            color: var(--primary-color);
+            padding: 8px 16px;
+            border: 1px solid var(--line-color);
+            border-radius: 6px;
+            transition: all 0.15s ease;
+        }
+        nav summary::-webkit-details-marker {
+            display: none;
+        }
+        nav summary:hover {
+            background-color: #F8FAFC;
+            border-color: var(--accent-blue);
+        }
+        .nav-content {
+            position: absolute;
+            top: calc(100% + 6px);
+            left: 0;
+            background: #ffffff;
+            border: 1px solid var(--line-color);
+            border-radius: 6px;
+            padding: 10px 16px;
+            min-width: 260px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+            z-index: 10;
+        }
+        .nav-content a {
+            display: block;
+            color: var(--text-dark);
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 0.95rem;
+            padding: 6px 0;
+            border-bottom: 1px dashed var(--line-color);
+        }
+        .nav-content a:last-child {
+            border-bottom: none;
+        }
+        .nav-content a:hover {
+            color: var(--accent-blue);
+        }
+
+        /* Page Hero Header Title Area */
+        header {
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            text-align: center;
+        }
+        header h1 {
+            color: var(--primary-color);
+            font-size: 2.4rem;
+            font-weight: 700;
+            letter-spacing: -1px;
+            line-height: 1.2;
+            margin-bottom: 15px;
+        }
+        
+        /* Styled Avatar Image */
+        .avatar-img {
+            display: block;
+            margin: 0 auto 10px auto;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 2px solid var(--line-color);
+        }
+
+        /* Minimalist Section Dropdowns applied to EVERY content block */
+        .section-dropdown {
+            border-bottom: 1px solid var(--line-color);
+        }
+        
+        .section-dropdown summary {
+            list-style: none;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 26px 0;
+            color: var(--primary-color);
+            font-size: 1.25rem;
+            font-weight: 600;
+            cursor: pointer;
+            user-select: none;
+        }
+        
+        .section-dropdown summary::-webkit-details-marker {
+            display: none;
+        }
+
+        /* Clean Indicator Icons */
+        .section-dropdown summary::after {
+            content: '+';
+            font-size: 1.4rem;
+            font-weight: 400;
+            color: #A0AEC0;
+            transition: transform 0.2s ease;
+        }
+
+        .section-dropdown[open] summary::after {
+            content: '−';
+            color: var(--accent-blue);
+        }
+
+        /* Content Blocks inside Panels */
+        .dropdown-content {
+            padding: 4px 0 30px 0;
+        }
+
+        p {
+            font-size: 1.05rem;
+            margin-bottom: 14px;
+            color: var(--text-dark);
+        }
+        
+        .highlight-phrase {
+            font-style: italic;
+            color: var(--accent-blue);
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        
+        <!-- Navigation Menu -->
+        <nav>
+            <details>
+                <summary>Navigation Menu</summary>
+                <div class="nav-content">
+                    <a href="About/Index-WhoHelped.html">Who helped me?</a>
+                    <a href="PosterContent/Index-PosterPage.html">Poster Content</a>
+                    <a href="MoreInfo/Index-MoreInfo.html">More Information</a>
+                    <a href="Waste/Index-Waste.html">Minimizing Waste</a>
+                    <a href="Importance/Index-WhyArePharmacologistsImportant.html">Why are pharmacologists important?</a>
+                </div>
+            </details>
+        </nav>
+
+        <!-- Page Main Title Header Area -->
+        <header>
+            <img src="https://codehs.com/uploads/89cfd57226b4ff60ae8e8186a0f13850" class="avatar-img" height="100px" width="100px" alt="Pharmacologist Avatar">
+            <h1>Evolution of Medicine</h1>
+        </header>
+
+        <!-- Dropdown Section 1: Definition (Starts OPEN) -->
+        <details class="section-dropdown" open>
+            <summary>What is Pharmacology?</summary>
+            <div class="dropdown-content">
+                <p>Pharmacology is the comprehensive scientific study of the uses, systemic biological effects, and specific modes of <span class="highlight-phrase">action drugs</span> within living organisms.</p>
+            </div>
+        </details>
+
+        <!-- Dropdown Section 2: Personal Motivations -->
+        <details class="section-dropdown">
+            <summary>Why do I Want to be a Pharmacologist?</summary>
+            <div class="dropdown-content">
+                <p>I want to become a pharmacologist because I love studying medicine, but I prefer minimal patient interactions. Choosing this career path allows me to focus deeply on pure research breakthroughs.</p>
+                <p>My favorite school subjects have always centered around science—specifically biology and chemistry. I am continuously fascinated by discovering how our biological systems function, and how targeted therapeutics interact with our bodies to cure illnesses!</p>
+            </div>
+        </details>
+
+        <!-- Dropdown Section 3: Academic Timeline -->
+        <details class="section-dropdown">
+            <summary>How Long Does It Take To Become One?</summary>
+            <div class="dropdown-content">
+                <p>It typically takes about 8 years of intensive post-secondary education to become a professional pharmacologist. This trajectory generally requires obtaining a PhD in pharmacology or a closely related biomedical science branch.</p>
+                <p>Degrees in pharmacology are primarily offered exclusively at the graduate school level due to how exceptionally broad, fast-moving, and complex the field is. Advanced schooling is also critical to understand regulatory safety frameworks, as developing compound formulations can accidentally become highly toxic if handled without expert clinical standards.</p>
+            </div>
+        </details>
+
+    </div>
+
+</body>
+</html>
