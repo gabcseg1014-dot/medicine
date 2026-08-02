@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Evolution of Medicine - Poster Content</title>
+    <!-- Importing Montserrat Font -->
+    <link rel="preconnect" href="https://googleapis.com">
+    <link rel="preconnect" href="https://gstatic.com" crossorigin>
+    <link href="https://googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        /* Base Reset & Theme Variables */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        :root {
+            --bg-color: #E6EEF8;       /* Soft light blue background */
+            --card-bg: #ffffff;        /* Pure white card surface */
+            --primary-color: #1A1A5E;  /* Elegant deep navy */
+            --text-dark: #2D3142;      /* Off-black body copy */
+            --accent-blue: #4E4EBA;    /* Interface signature blue */
+            --line-color: #E2E8F0;     /* Slate gray clean divider lines */
+        }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-dark);
+            line-height: 1.7;
+            padding: 60px 20px;
+        }
+
+        /* Minimal Centered Card Layout */
+        .container {
+            max-width: 760px;
+            margin: 0 auto;
+            background: var(--card-bg);
+            padding: 50px 60px;
+            border-radius: 12px;
+        }
+
+        /* Clean Dropdown Navigation Menu */
+        nav {
+            margin-bottom: 40px;
+        }
+        nav details {
+            display: inline-block;
+            position: relative;
+        }
+        nav summary {
+            list-style: none;
+            cursor: pointer;
+            font-weight: 600;
+            font-size: 0.95rem;
+            color: var(--primary-color);
+            padding: 8px 16px;
+            border: 1px solid var(--line-color);
+            border-radius: 6px;
+            transition: all 0.15s ease;
+        }
+        nav summary::-webkit-details-marker {
+            display: none;
+        }
+        nav summary:hover {
+            background-color: #F8FAFC;
+            border-color: var(--accent-blue);
+        }
+        .nav-content {
+            position: absolute;
+            top: calc(100% + 6px);
+            left: 0;
+            background: #ffffff;
+            border: 1px solid var(--line-color);
+            border-radius: 6px;
+            padding: 10px 16px;
+            min-width: 140px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+            z-index: 10;
+        }
+        .nav-content a {
+            display: block;
+            color: var(--text-dark);
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 0.95rem;
+            padding: 4px 0;
+        }
+        .nav-content a:hover {
+            color: var(--accent-blue);
+        }
+
+        /* Page Hero Header Title Area */
+        header {
+            margin-bottom: 30px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid var(--line-color);
+        }
+        header h1 {
+            color: var(--primary-color);
+            font-size: 2.2rem;
+            font-weight: 700;
+            letter-spacing: -1px;
+            line-height: 1.2;
+            margin-bottom: 6px;
+        }
+        header p.meta-tag {
+            font-size: 0.95rem;
+            color: var(--accent-blue);
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        /* Minimalist Meta Grid (Replaces old blocky Table) */
+        .meta-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            margin-bottom: 35px;
+            padding-bottom: 25px;
+            border-bottom: 1px solid var(--line-color);
+        }
+        .meta-item h3 {
+            font-size: 0.9rem;
+            color: #718096;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 4px;
+            font-weight: 600;
+        }
+        .meta-item p {
+            font-size: 1rem;
+            font-weight: 500;
+            color: var(--text-dark);
+            margin-bottom: 0;
+        }
+
+        /* Minimalist Section Dropdowns applied to EVERY block */
+        .section-dropdown {
+            border-bottom: 1px solid var(--line-color);
+        }
+        
+        .section-dropdown summary {
+            list-style: none;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 26px 0;
+            color: var(--primary-color);
+            font-size: 1.25rem;
+            font-weight: 600;
+            cursor: pointer;
+            user-select: none;
+        }
+        
+        .section-dropdown summary::-webkit-details-marker {
+            display: none;
+        }
+
+        /* Clean Indicator Icons */
+        .section-dropdown summary::after {
+            content: '+';
+            font-size: 1.4rem;
+            font-weight: 400;
+            color: #A0AEC0;
+            transition: transform 0.2s ease;
+        }
+
+        .section-dropdown[open] summary::after {
+            content: '−';
+            color: var(--accent-blue);
+        }
+
+        /* Content Blocks inside Panels */
+        .dropdown-content {
+            padding: 4px 0 30px 0;
+        }
+
+        p {
+            font-size: 1.05rem;
+            margin-bottom: 14px;
+            color: var(--text-dark);
+        }
+
+        h3.content-subtitle {
+            font-size: 1.1rem;
+            color: var(--primary-color);
+            margin: 20px 0 10px 0;
+            font-weight: 600;
+        }
+
+        /* Modernized Timeline/Inventions List */
+        ul.timeline-list {
+            list-style: none;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px 24px;
+            margin-top: 15px;
+        }
+
+        ul.timeline-list li {
+            position: relative;
+            padding-left: 20px;
+            font-size: 0.95rem;
+            color: var(--text-dark);
+        }
+
+        ul.timeline-list li::before {
+            content: "•";
+            position: absolute;
+            left: 4px;
+            color: var(--accent-blue);
+            font-weight: 700;
+        }
+
+        .highlight-phrase {
+            font-weight: 600;
+            color: var(--accent-blue);
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        
+        <!-- Navigation Menu -->
+        <nav>
+            <details>
+                <summary>Navigation Menu</summary>
+                <div class="nav-content">
+                    <a href="/index.html">Home Dashboard</a>
+                </div>
+            </details>
+        </nav>
+
+        <!-- Page Main Title Header Area -->
+        <header>
+            <p class="meta-tag">Research Scope</p>
+            <h1>Topic: Pharmacology</h1>
+        </header>
+
+        <!-- Project Objectives Grid (Replaced old boxy Table) -->
+        <div class="meta-grid">
+            <div class="meta-item">
+                <h3>Learning Goal</h3>
+                <p>Gain a better understanding of how medicine has evolved over time.</p>
+            </div>
+            <div class="meta-item">
+                <h3>Skills Developing</h3>
+                <p>Advanced research and scientific writing skills.</p>
+            </div>
+        </div>
+
+        <!-- Dropdown Section 1: History Foundations (Starts OPEN) -->
+        <details class="section-dropdown" open>
+            <summary>How it Started</summary>
+            <div class="dropdown-content">
+                <p>One of the first pieces of evidence is from 2600 BC when the Egyptian Imhotep (Chancellor to King Djoser) described the diagnosis and treatment of about 200 diseases. In ancient Egypt and Mesopotamia, people wore protective amulets as a way to protect themselves from illness. After his discovery, Imhotep was worshipped as a God of Medicine.</p>
+                <p>We can observe how, early in time, people often turned to God to heal them. In Ancient Rome, people who were sick or hurt were expected to visit the temple of a healing God and would even buy a clay version of the body part that hurt them, often referred to as terracotta votives.</p>
+                <p>In those times, people believed that the healing God would visit them in their dreams and tell them the solution to their pain, which could vary from visiting the local medical practitioner for healing salve to making sacrifices.</p>
+            </div>
+        </details>
+
+        <!-- Dropdown Section 2: Historical Milestones -->
+        <details class="section-dropdown">
+            <summary>Further Advances</summary>
+            <div class="dropdown-content">
+                <p>As time went on, more advances were made to both medicine and its related technology. In around 950 BC, the world's oldest prosthetic devices were made in Egypt. These were wooden and leather toes. Later on in 300-500 BC, both Greeks and Romans created new surgical tools that would go on to inspire modern ones. These tools were made from bronze.</p>
+                <p>The next crucial moment for the evolution of medicine can be seen in 1249 when Roger Bacon invented the spectacles.</p>
+                
+                <h3 class="content-subtitle">Historical Inventions (1590s - 2015)</h3>
+                <ul class="timeline-list">
+                    <li>Compound Microscope</li>
+                    <li>Mercury-in-glass thermometer</li>
+                    <li>Stethoscope</li>
+                    <li>X-rays</li>
+                    <li>Iron lung</li>
+                    <li>Electron microscope</li>
+                    <li>Artificial heart and kidney</li>
+                    <li>Nuclear Magnetic Resonance (NMR)</li>
+                    <li>Whole Body MRI</li>

@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Who helped me?</title>
+    <!-- Importing Montserrat Font -->
+    <link rel="preconnect" href="https://googleapis.com">
+    <link rel="preconnect" href="https://gstatic.com" crossorigin>
+    <link href="https://googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        /* Base Reset & Theme Variables */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        :root {
+            --bg-color: #E6EEF8;       /* Soft light blue backdrop */
+            --card-bg: #ffffff;        /* Pure white paper canvas */
+            --primary-color: #1A1A5E;  /* Deep high-contrast clean navy */
+            --text-dark: #2D3142;      /* Off-black body text for readability */
+            --accent-blue: #4E4EBA;    /* Clean signature blue for icons/links */
+            --line-color: #E2E8F0;     /* Muted slate for dividing elements */
+        }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-dark);
+            line-height: 1.7;
+            padding: 60px 20px;
+        }
+
+        /* Minimal Centered Card Layout */
+        .container {
+            max-width: 760px;
+            margin: 0 auto;
+            background: var(--card-bg);
+            padding: 50px 60px;
+            border-radius: 12px;
+        }
+
+        /* Clean Dropdown Navigation Menu */
+        nav {
+            margin-bottom: 40px;
+        }
+        nav details {
+            display: inline-block;
+            position: relative;
+        }
+        nav summary {
+            list-style: none;
+            cursor: pointer;
+            font-weight: 600;
+            font-size: 0.95rem;
+            color: var(--primary-color);
+            padding: 8px 16px;
+            border: 1px solid var(--line-color);
+            border-radius: 6px;
+            transition: all 0.15s ease;
+        }
+        nav summary::-webkit-details-marker {
+            display: none;
+        }
+        nav summary:hover {
+            background-color: #F8FAFC;
+            border-color: var(--accent-blue);
+        }
+        .nav-content {
+            position: absolute;
+            top: calc(100% + 6px);
+            left: 0;
+            background: #ffffff;
+            border: 1px solid var(--line-color);
+            border-radius: 6px;
+            padding: 10px 16px;
+            min-width: 140px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+            z-index: 10;
+        }
+        .nav-content a {
+            display: block;
+            color: var(--text-dark);
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 0.95rem;
+            padding: 4px 0;
+        }
+        .nav-content a:hover {
+            color: var(--accent-blue);
+        }
+
+        /* Minimalist Section Dropdowns */
+        .section-dropdown {
+            border-bottom: 1px solid var(--line-color);
+        }
+        
+        .section-dropdown summary {
+            list-style: none;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 26px 0;
+            color: var(--primary-color);
+            font-size: 1.3rem;
+            font-weight: 600;
+            cursor: pointer;
+            user-select: none;
+        }
+        
+        .section-dropdown summary::-webkit-details-marker {
+            display: none;
+        }
+
+        /* Clean Indicator Icons */
+        .section-dropdown summary::after {
+            content: '+';
+            font-size: 1.4rem;
+            font-weight: 400;
+            color: #A0AEC0;
+            transition: transform 0.2s ease;
+        }
+
+        .section-dropdown[open] summary::after {
+            content: '−';
+            color: var(--accent-blue);
+        }
+
+        /* Content Blocks inside Panels */
+        .dropdown-content {
+            padding: 4px 0 30px 0;
+        }
+
+        p {
+            font-size: 1.05rem;
+            margin-bottom: 14px;
+        }
+
+        .role-title {
+            font-weight: 600;
+            color: #718096; /* Elegant gray for titles */
+            margin-right: 6px;
+        }
+
+        /* Academic Bibliography List Setup */
+        ol.bibliography {
+            list-style: none;
+            counter-reset: citation-counter;
+        }
+
+        ol.bibliography li {
+            counter-increment: citation-counter;
+            position: relative;
+            padding-left: 36px;
+            margin-bottom: 24px;
+            font-size: 0.95rem;
+        }
+
+        ol.bibliography li::before {
+            content: counter(citation-counter) ".";
+            position: absolute;
+            left: 0;
+            top: 0;
+            color: var(--accent-blue);
+            font-weight: 600;
+        }
+
+        .source-tag {
+            display: inline-block;
+            color: var(--accent-blue);
+            font-weight: 700;
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 4px;
+        }
+
+        .citation-text {
+            display: block;
+        }
+        
+        .citation-text a {
+            color: var(--accent-blue);
+            word-break: break-all;
+            text-decoration: none;
+            border-bottom: 1px dashed rgba(78, 78, 186, 0.4);
+        }
+
+        .citation-text a:hover {
+            border-bottom-style: solid;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        
+        <!-- Navigation Menu -->
+        <nav>
+            <details>
+                <summary>Navigation Menu</summary>
+                <div class="nav-content">
+                    <a href="/index.html">Home Dashboard</a>
+                </div>
+            </details>
+        </nav>
+
+        <!-- Dropdown Section 1: Acknowledgments -->
+        <details class="section-dropdown" open>
+            <summary>Who Helped Me</summary>
+            <div class="dropdown-content">
+                <p><span class="role-title">Supervisor:</span> Felipe Monroy (Dr. Monroy)</p>
+                <p><span class="role-title">Extra Advice From:</span> Dr. Tam and Dr. Goodman from UT Southwestern.</p>
+            </div>
+        </details>
+
+        <!-- Dropdown Section 2: Cited Bibliography -->
+        <details class="section-dropdown">
+            <summary>Cited Bibliography</summary>
+            <div class="dropdown-content">
+                <ol class="bibliography">
+                    <!-- Citation 1 -->
+                    <li>
+                        <span class="source-tag">NIH</span>
+                        <span class="citation-text">
+                            Hajar, R. (2015). History of Medicine Timeline. <em>Heart Views</em>, 16(1), 43. 
+                            <a href="https://doi.org" target="_blank">https://doi.org</a>
+                        </span>
+                    </li>
+                    
+                    <!-- Citation 2 -->
+                    <li>
+                        <span class="source-tag">ScienceDirect</span>
+                        <span class="citation-text">
+                            Singh D, Mathur A, Arora S, Roy S, Mahindroo N. Journey of organ on a chip technology and its role in future healthcare scenario. <em>Applied Surface Science Advances</em>. 2022 Jun;9:100246. 
+                            doi: 10.1016/j.apsadv.2022.100246. Epub 2022 Apr 11. PMCID: PMC9000345.
+                        </span>
+                    </li>
+                    
+                    <!-- Citation 3 -->
+                    <li>
+                        <span class="source-tag">Britannica</span>
+                        <span class="citation-text">
+                            Guthrie, D. J., Richardson, R. G., Underwood, E. A., Thomson, W. a. R., & Rhodes, P. (2024, December 13). History of medicine | History & Facts. <em>Encyclopedia Britannica</em>. 
+                            <a href="https://britannica.com" target="_blank">https://britannica.com</a>
+                        </span>
+                    </li>
+
+                    <!-- Citation 4 -->
+                    <li>
+                        <span class="source-tag">Yale School of Medicine</span>
+                        <span class="citation-text">
+                            Yale school of medicine. (2019). Medical devices and technology across the years. <em>Medicine.yale.edu</em>. 
+                            <a href="https://yale.edu" target="_blank">https://yale.edu</a>
+                        </span>
+                    </li>
+
+                    <!-- Citation 5 -->
+                    <li>
+                        <span class="source-tag">Biomedical Engineering Online</span>
+                        <span class="citation-text">
+                            Wu, Q., Liu, J., Wang, X., Feng, L., Wu, J., Zhu, X., Wen, W., & Gong, X. (2020). Organ-on-a-chip: recent breakthroughs and future prospects. <em>BioMedical Engineering OnLine</em>, 19(1). 
+                            <a href="https://doi.org" target="_blank">https://doi.org</a>
+                    </span>
+                </li>
+                </ol>
+            </div>
+        </details>
+
+    </div>
+
+</body>
+</html>

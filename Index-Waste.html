@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Minimizing Waste - Project Sustainability</title>
+    <!-- Importing Montserrat Font -->
+    <link rel="preconnect" href="https://googleapis.com">
+    <link rel="preconnect" href="https://gstatic.com" crossorigin>
+    <link href="https://googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        /* Base Reset & Theme Variables */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        :root {
+            --bg-color: #E6EEF8;       /* Soft light blue background */
+            --card-bg: #ffffff;        /* Pure white card surface */
+            --primary-color: #1A1A5E;  /* Elegant deep navy */
+            --text-dark: #2D3142;      /* Off-black body copy */
+            --accent-blue: #4E4EBA;    /* Interface signature blue */
+            --line-color: #E2E8F0;     /* Slate gray clean divider lines */
+        }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-dark);
+            line-height: 1.7;
+            padding: 60px 20px;
+        }
+
+        /* Minimal Centered Card Layout */
+        .container {
+            max-width: 760px;
+            margin: 0 auto;
+            background: var(--card-bg);
+            padding: 50px 60px;
+            border-radius: 12px;
+        }
+
+        /* Clean Dropdown Navigation Menu */
+        nav {
+            margin-bottom: 40px;
+        }
+        nav details {
+            display: inline-block;
+            position: relative;
+        }
+        nav summary {
+            list-style: none;
+            cursor: pointer;
+            font-weight: 600;
+            font-size: 0.95rem;
+            color: var(--primary-color);
+            padding: 8px 16px;
+            border: 1px solid var(--line-color);
+            border-radius: 6px;
+            transition: all 0.15s ease;
+        }
+        nav summary::-webkit-details-marker {
+            display: none;
+        }
+        nav summary:hover {
+            background-color: #F8FAFC;
+            border-color: var(--accent-blue);
+        }
+        .nav-content {
+            position: absolute;
+            top: calc(100% + 6px);
+            left: 0;
+            background: #ffffff;
+            border: 1px solid var(--line-color);
+            border-radius: 6px;
+            padding: 10px 16px;
+            min-width: 140px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+            z-index: 10;
+        }
+        .nav-content a {
+            display: block;
+            color: var(--text-dark);
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 0.95rem;
+            padding: 4px 0;
+        }
+        .nav-content a:hover {
+            color: var(--accent-blue);
+        }
+
+        /* Minimalist Section Dropdowns applied to EVERY block */
+        .section-dropdown {
+            border-bottom: 1px solid var(--line-color);
+        }
+        
+        .section-dropdown summary {
+            list-style: none;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 26px 0;
+            color: var(--primary-color);
+            font-size: 1.25rem;
+            font-weight: 600;
+            cursor: pointer;
+            user-select: none;
+        }
+        
+        .section-dropdown summary::-webkit-details-marker {
+            display: none;
+        }
+
+        /* Clean Indicator Icons */
+        .section-dropdown summary::after {
+            content: '+';
+            font-size: 1.4rem;
+            font-weight: 400;
+            color: #A0AEC0;
+            transition: transform 0.2s ease;
+        }
+
+        .section-dropdown[open] summary::after {
+            content: '−';
+            color: var(--accent-blue);
+        }
+
+        /* Content Blocks inside Panels */
+        .dropdown-content {
+            padding: 4px 0 30px 0;
+        }
+
+        p {
+            font-size: 1.05rem;
+            margin-bottom: 14px;
+            color: var(--text-dark);
+        }
+
+        .highlight-phrase {
+            font-weight: 600;
+            color: var(--accent-blue);
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        
+        <!-- Navigation Menu -->
+        <nav>
+            <details>
+                <summary>Navigation Menu</summary>
+                <div class="nav-content">
+                    <a href="/index.html">Home Dashboard</a>
+                </div>
+            </details>
+        </nav>
+
+        <!-- Dropdown Section: Sustainability Panel (Starts OPEN) -->
+        <details class="section-dropdown" open>
+            <summary>Minimizing Waste</summary>
+            <div class="dropdown-content">
+                <p>Part of my physical handouts involved printing and assembling a small reference booklet on pharmacology.</p>
+                <p>However, during initial drafting tests, both that booklet asset and my original research poster structure generated an excess amount of blank scrap paper waste because our trimmed designs did not consume full physical page layouts.</p>
+                <p>In order to actively combat this footprint, I carefully redesigned our assembly workflow, ensuring that <span class="highlight-phrase">every single part of each paper sheet</span> was fully recycled, optimized, and utilized for an entirely new project element.</p>
+            </div>
+        </details>
+
+    </div>
+
+</body>
+</html>

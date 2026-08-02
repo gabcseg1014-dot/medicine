@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>More Information - Project Documentation</title>
+    <!-- Importing Montserrat Font -->
+    <link rel="preconnect" href="https://googleapis.com">
+    <link rel="preconnect" href="https://gstatic.com" crossorigin>
+    <link href="https://googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        /* Base Reset & Theme Variables */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        :root {
+            --bg-color: #E6EEF8;       /* Soft light blue background */
+            --card-bg: #ffffff;        /* Pure white card surface */
+            --primary-color: #1A1A5E;  /* Elegant deep navy */
+            --text-dark: #2D3142;      /* Off-black body copy */
+            --accent-blue: #4E4EBA;    /* Interface signature blue */
+            --line-color: #E2E8F0;     /* Slate gray clean divider lines */
+        }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-dark);
+            line-height: 1.7;
+            padding: 60px 20px;
+        }
+
+        /* Minimal Centered Card Layout */
+        .container {
+            max-width: 760px;
+            margin: 0 auto;
+            background: var(--card-bg);
+            padding: 50px 60px;
+            border-radius: 12px;
+        }
+
+        /* Clean Dropdown Navigation Menu */
+        nav {
+            margin-bottom: 40px;
+        }
+        nav details {
+            display: inline-block;
+            position: relative;
+        }
+        nav summary {
+            list-style: none;
+            cursor: pointer;
+            font-weight: 600;
+            font-size: 0.95rem;
+            color: var(--primary-color);
+            padding: 8px 16px;
+            border: 1px solid var(--line-color);
+            border-radius: 6px;
+            transition: all 0.15s ease;
+        }
+        nav summary::-webkit-details-marker {
+            display: none;
+        }
+        nav summary:hover {
+            background-color: #F8FAFC;
+            border-color: var(--accent-blue);
+        }
+        .nav-content {
+            position: absolute;
+            top: calc(100% + 6px);
+            left: 0;
+            background: #ffffff;
+            border: 1px solid var(--line-color);
+            border-radius: 6px;
+            padding: 10px 16px;
+            min-width: 140px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+            z-index: 10;
+        }
+        .nav-content a {
+            display: block;
+            color: var(--text-dark);
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 0.95rem;
+            padding: 4px 0;
+        }
+        .nav-content a:hover {
+            color: var(--accent-blue);
+        }
+
+        /* Page Hero Header Title Area */
+        header {
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+        }
+        header h1 {
+            color: var(--primary-color);
+            font-size: 2.2rem;
+            font-weight: 700;
+            letter-spacing: -1px;
+            line-height: 1.2;
+        }
+
+        /* Minimalist Section Dropdowns applied to EVERY block */
+        .section-dropdown {
+            border-bottom: 1px solid var(--line-color);
+        }
+        
+        .section-dropdown summary {
+            list-style: none;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 26px 0;
+            color: var(--primary-color);
+            font-size: 1.25rem;
+            font-weight: 600;
+            cursor: pointer;
+            user-select: none;
+        }
+        
+        .section-dropdown summary::-webkit-details-marker {
+            display: none;
+        }
+
+        /* Clean Indicator Icons */
+        .section-dropdown summary::after {
+            content: '+';
+            font-size: 1.4rem;
+            font-weight: 400;
+            color: #A0AEC0;
+            transition: transform 0.2s ease;
+        }
+
+        .section-dropdown[open] summary::after {
+            content: '−';
+            color: var(--accent-blue);
+        }
+
+        /* Content Blocks inside Panels */
+        .dropdown-content {
+            padding: 4px 0 30px 0;
+        }
+
+        p {
+            font-size: 1.05rem;
+            margin-bottom: 14px;
+            color: var(--text-dark);
+        }
+
+        /* Responsive Image Gallery Grid */
+        .image-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+            gap: 16px;
+            margin-top: 8px;
+        }
+
+        .grid-img {
+            width: 100%;
+            height: 100px;
+            object-fit: cover;
+            border-radius: 6px;
+            border: 1px solid var(--line-color);
+            transition: transform 0.2s ease;
+        }
+
+        .grid-img:hover {
+            transform: scale(1.04);
+            border-color: var(--accent-blue);
+        }
+
+        /* Clean Styled Material Lists */
+        ul.materials-list {
+            list-style: none;
+        }
+
+        ul.materials-list li {
+            position: relative;
+            padding-left: 24px;
+            font-size: 1.05rem;
+            margin-bottom: 8px;
+            color: var(--text-dark);
+        }
+
+        ul.materials-list li::before {
+            content: "•";
+            position: absolute;
+            left: 6px;
+            color: var(--accent-blue);
+            font-weight: 700;
+        }
+        
+        .highlight-phrase {
+            font-weight: 600;
+            color: var(--accent-blue);
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        
+        <!-- Navigation Menu -->
+        <nav>
+            <details>
+                <summary>Navigation Menu</summary>
+                <div class="nav-content">
+                    <a href="/index.html">Home Dashboard</a>
+                </div>
+            </details>
+        </nav>
+
+        <!-- Page Main Title Header Area -->
+        <header>
+            <h1>Project Documentation</h1>
+        </header>
+
+        <!-- Dropdown Section 1: Image Gallery (Starts OPEN) -->
+        <details class="section-dropdown" open>
+            <summary>Project Gallery</summary>
+            <div class="dropdown-content">
+                <p>Visual records detailing raw crafting media, layout blueprints, and final presentation media models:</p>
+                <div class="image-grid">
+                    <img src="https://codehs.com/uploads/cc12400f14c2cf517175a8f5ec1f213e" class="grid-img" alt="Clay Process View 1">
+                    <img src="https://codehs.com/uploads/dac06a58078d19216067ca6ee3a1a563" class="grid-img" alt="Clay Process View 2">
+                    <img src="https://codehs.com/uploads/838be3d1c761883ef67650f6bb02440e" class="grid-img" alt="Poster Layout Map">
+                    <img src="https://codehs.com/uploads/eac608c1acbcf493e8c4709d8d13895d" class="grid-img" alt="Assembled Handouts Bagged">
+                    <img src="https://codehs.com/uploads/a4eda194a33a362cdb90e5ebb185340a" class="grid-img" alt="Sourcing Materials Spread">
+                    <img src="https://codehs.com/uploads/f1628b4de4d478f5cd6d7c08a27d5040" class="grid-img" alt="Final Research Poster Setup">
+                </div>
+            </div>
+        </details>
+
+        <!-- Dropdown Section 2: Sourcing Materials Inventory -->
+        <details class="section-dropdown">
+            <summary>Supplies Used</summary>
+            <div class="dropdown-content">
+                <ul class="materials-list">
+                    <li>Crayola White Air Dry Clay</li>
+                    <li>Crayola 50 Pack Color Pencils</li>
+                    <li>Dollar Tree Poster Board</li>
+                    <li>Clay Sculpting Kit from Michaels</li>
+                    <li>Epson Printer and Ink</li>
+                    <li>Printer Paper</li>
+                </ul>
+            </div>
+        </details>
+
+        <!-- Dropdown Section 3: Ideation Timeline & Methods -->
+        <details class="section-dropdown">
+            <summary>Process of Deciding my Product</summary>
+            <div class="dropdown-content">
+                <p>First of all, I knew I had to decide on a topic for my project. Once I decided to focus it on pharmacology, I had to determine a feasible product structure. At first, I encountered layout blocks with this phase, but when I met with my project supervisor, we determined that I would begin by studying <span class="highlight-phrase">Organ-on-a-Chip (OOAC)</span> biomimetic models.</p>
+                <p>After examining two foundational research papers, my supervisor connected me with an external expert who was willing to guide our development course: Dr. Goodman from UT Southwestern. In the month of November, we met with him over Zoom to gather technical guidance. This consultative meeting helped solidify our strategy, steering our efforts toward creating a comprehensive academic research poster highlighting the historical evolution of medicine.</p>
+            </div>
+        </details>
+
+        <!-- Dropdown Section 4: Handout Analysis -->
+        <details class="section-dropdown">
+            <summary>Handouts: What Does it Mean?</summary>
+            <div class="dropdown-content">
+                <p>The companion kits serve as a clear physical metaphor tracking the evolution of therapeutic medicine over time. In earlier historical periods, society did not possess quick access to localized adhesive band-aids like we rely on today.</p>
